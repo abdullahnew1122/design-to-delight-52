@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface FormInputProps {
@@ -7,6 +8,7 @@ interface FormInputProps {
   placeholder?: string;
   type?: string;
   readOnly?: boolean;
+  name?: string; // Added name property to the interface
 }
 
 export function FormInput({
@@ -16,6 +18,7 @@ export function FormInput({
   placeholder,
   type = "text",
   readOnly = false,
+  name, // Added name to props
 }: FormInputProps) {
   return (
     <div className="flex w-full flex-col items-stretch justify-center">
@@ -31,6 +34,7 @@ export function FormInput({
               onChange={onChange}
               placeholder={placeholder}
               readOnly={readOnly}
+              name={name} // Added name attribute to input
               className="text-[#060A1E] self-stretch w-full my-auto bg-transparent outline-none"
             />
           </div>
